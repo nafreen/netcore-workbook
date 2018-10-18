@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo", "ToDo\ToDo.csproj", "{2B335EC8-68FE-47D3-AFB5-84FF4340798E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo", "ToDo\ToDo.csproj", "{2B335EC8-68FE-47D3-AFB5-84FF4340798E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpers", "TagHelpers\TagHelpers.csproj", "{670CDE35-3BA3-4E7D-AAFC-35089C6A11D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpers.test", "TagHelpers.test\TagHelpers.test.csproj", "{67B5534E-CBC6-4AC5-8AA5-1CEED7B83C94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2B335EC8-68FE-47D3-AFB5-84FF4340798E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B335EC8-68FE-47D3-AFB5-84FF4340798E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B335EC8-68FE-47D3-AFB5-84FF4340798E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670CDE35-3BA3-4E7D-AAFC-35089C6A11D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670CDE35-3BA3-4E7D-AAFC-35089C6A11D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670CDE35-3BA3-4E7D-AAFC-35089C6A11D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670CDE35-3BA3-4E7D-AAFC-35089C6A11D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B5534E-CBC6-4AC5-8AA5-1CEED7B83C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B5534E-CBC6-4AC5-8AA5-1CEED7B83C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B5534E-CBC6-4AC5-8AA5-1CEED7B83C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B5534E-CBC6-4AC5-8AA5-1CEED7B83C94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
