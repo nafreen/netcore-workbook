@@ -23,7 +23,9 @@ namespace ToDoApp.Controllers
         // GET: ToDo/Create
         public ActionResult Create()
         {
+            
             return View();
+
         }
 
         // POST: ToDo/Create
@@ -31,7 +33,11 @@ namespace ToDoApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ToDo toDo)
         {
-            try
+            if (!ModelState.IsValid)
+
+                return View();
+
+                try
             {
                 // TODO: Add insert logic here
                 Repository.Add(toDo);

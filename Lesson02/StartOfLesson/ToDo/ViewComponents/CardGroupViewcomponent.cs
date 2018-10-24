@@ -8,11 +8,11 @@ using ToDoApp.Services;
 
 namespace ToDoApp.ViewComponents
 {
-    public class CardGroupViewcomponent : ViewComponent
+    public class CardGroupViewComponent : ViewComponent
     {
         private readonly IRepository repository;
 
-        public CardGroupViewcomponent (IRepository repository)
+        public CardGroupViewComponent(IRepository repository)
         {
             this.repository = repository;
         }
