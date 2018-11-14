@@ -11,6 +11,8 @@ namespace ToDoApp.Models
 
         public string Description { get; set; }
 
+        public int StatusId { get; set; }
+
         [UIHint("Status")]
         public Status Status { get; set; }
 

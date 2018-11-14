@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ToDoApp.Data;
 using ToDoApp.Infrastructure;
 using ToDoApp.Services;
 using WebServerUtilities;
@@ -25,7 +27,8 @@ namespace ToDoApp
         {
             services.AddSingleton<UnwrapExceptionMiddleware>();
             services.AddSingleton<InternalServerErrorStatusCodeMiddleware>();
-            services.AddSingleton<IRepository, Repository>();
+            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IReadOnlyToDoContext, ToDoContext>();
 
             services.AddHostedService<PurgeOldToDosService>();
 
@@ -36,7 +39,7 @@ namespace ToDoApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddDbContext<ToDoContext>(config => config.UseSqlServer(Configuration.GetConnectionString("ToDoApp")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -63,6 +66,18 @@ namespace ToDoApp
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            EnsureDatabaseUpdated(app);
+        }
+
+        private void EnsureDatabaseUpdated(IApplicationBuilder app)
+        {
+            var scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+            using (var serviceScope = scopeFactory.CreateScope())
+            using (var context = serviceScope.ServiceProvider.GetService<ToDoContext>())
+            {
+                context.Database.EnsureCreated();
+            }
         }
     }
 }
