@@ -2,8 +2,13 @@
 @inject ToDoApp.Services.IRepository repository
 @inject ToDoApp.Data.ToDoContext dbContext
 @{
+<<<<<<< HEAD
     var statusitems = repository.Statuses.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
     var tagitems = dbContext.Tags.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
+=======
+    var statusItems = repository.Statuses.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
+    var tagItems = dbContext.Tags.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
+>>>>>>> a3d359a6355c8dda578150dc02f32a18ac09e18f
 
     ViewData["Title"] = "Create";
 }
@@ -28,7 +33,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="StatusId" class="control-label"></label>
+<<<<<<< HEAD
                 <select asp-for="StatusId" asp-items="@statusitems"></select>
+=======
+                <select asp-for="StatusId" asp-items="@statusItems"  class="form-control" ></select>
+>>>>>>> a3d359a6355c8dda578150dc02f32a18ac09e18f
                 <span asp-validation-for="StatusId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -40,6 +49,11 @@
                 <label asp-for="Created" class="control-label"></label>
                 <input asp-for="Created" class="form-control" />
                 <span asp-validation-for="Created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TagId" class="control-label"></label>
+                <select asp-for="TagId" asp-items="@tagItems"  class="form-control" ></select>
+                <span asp-validation-for="TagId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
