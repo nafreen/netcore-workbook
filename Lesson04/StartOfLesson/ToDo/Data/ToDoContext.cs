@@ -18,6 +18,7 @@ namespace ToDoApp.Data
         {
             modelBuilder.Entity<ToDo>().HasKey(x => x.Id).ForSqlServerIsClustered();
             modelBuilder.Entity<ToDo>().Property(x => x.Id).UseSqlServerIdentityColumn();
+
             modelBuilder.Entity<ToDo>().HasOne(x => x.Status).WithMany(x => x.ToDos).HasForeignKey(x => x.StatusId);
             modelBuilder.Entity<ToDo>().HasIndex(x => x.StatusId).HasName($"IX_{nameof(ToDo)}_{nameof(ToDo.Status)}");
 

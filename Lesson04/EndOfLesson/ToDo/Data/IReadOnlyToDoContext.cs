@@ -12,5 +12,6 @@ namespace ToDoApp.Data
         IQueryable<ToDo> ToDos { get; }
 
         IQueryable<Status> Statuses { get; }
+        IQueryable<Tag> Tags { get; }
     }
 }

@@ -35,12 +35,6 @@
             @Html.DisplayFor(model => model.Status)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Tag)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Tag.Value)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.Created)
         </dt>
         <dd>
@@ -50,7 +44,7 @@
             @Html.DisplayNameFor(model => model.Tag)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tag.Value)
+            @Model.Tag?.Value
         </dd>
     </dl>
 </div>

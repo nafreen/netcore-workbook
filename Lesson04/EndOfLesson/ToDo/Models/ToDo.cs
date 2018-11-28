@@ -12,14 +12,15 @@ namespace ToDoApp.Models
 
         public string Description { get; set; }
 
-        public int? TagId { get; set; }
-
-        public Tag Tag { get; set; }
-
         public int StatusId { get; set; }
 
         [UIHint("Status")]
         public Status Status { get; set; }
+
+        public int? TagId { get; set; }
+
+        
+        public Tag Tag { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? Created { get; set; }

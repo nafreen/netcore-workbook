@@ -23,6 +23,8 @@ namespace ToDoApp.Services
 
         public IQueryable<Status> Statuses => _readOnlyToDoContext.Statuses;
 
+        public IQueryable<Tag> Tags => _readOnlyToDoContext.Tags;
+
         public void Add(ToDo toDo)
         {
             _toDoContext.ToDos.Add(toDo);

@@ -49,8 +49,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.Tag)
+                @*@Html.DisplayFor(modelItem => Tags?.Value)*@
+                @item.Tag?.Value
             </td>
             <td day-of-the-week asp-for="@item.Created"></td>
             <td>

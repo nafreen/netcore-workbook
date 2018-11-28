@@ -2,13 +2,10 @@
 @inject ToDoApp.Services.IRepository repository
 @inject ToDoApp.Data.ToDoContext dbContext
 @{
-<<<<<<< HEAD
+
     var statusitems = repository.Statuses.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
     var tagitems = dbContext.Tags.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
-=======
-    var statusItems = repository.Statuses.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
-    var tagItems = dbContext.Tags.Select(x => new SelectListItem(x.Value, x.Id.ToString()));
->>>>>>> a3d359a6355c8dda578150dc02f32a18ac09e18f
+    
 
     ViewData["Title"] = "Edit";
 }
@@ -38,16 +35,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="StatusId" class="control-label"></label>
-<<<<<<< HEAD
-                <select asp-for="StatusId" asp-items="@statusitems"></select>
-=======
-                <select asp-for="StatusId" asp-items="@statusItems" class="form-control"></select>
->>>>>>> a3d359a6355c8dda578150dc02f32a18ac09e18f
+                <select asp-for="StatusId" asp-items="@statusitems" class="form-control"></select>
                 <span asp-validation-for="StatusId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TagId" class="control-label"></label>
-                <select asp-for="TagId" asp-items="@tagitems">
+                <select asp-for="TagId" asp-items="@tagitems" class="form-control" >
                     <option value="">Select</option>
                 </select>
                 <span asp-validation-for="TagId" class="text-danger"></span>
@@ -57,14 +50,14 @@
                 <input asp-for="Created" class="form-control" />
                 <span asp-validation-for="Created" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="TagId" class="control-label"></label>
-                <select multiple asp-for="TagId" asp-items="@tagItems" class="form-control">
+                <select multiple asp-for="TagId" asp-items="@tagitems" class="form-control">
                     <option value="">Please Select 1</option>
                     <option value=""></option>
                 </select>
                 <span asp-validation-for="TagId" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
